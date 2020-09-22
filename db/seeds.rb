@@ -6,5 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# User: name (has_many gifs)
-# Gif: description, user_id, likes => default to to 0 (belongs_to user)
+# User: username (has_many gifs)
+# Gif: title, user_id, likes => default to to 0 (belongs_to user)
+
+require 'net/http'
+require 'json'
+url="http://api.giphy.com/v1/stickers/search?q=ryan+gosling&api_key=7mql7m8uDM0nBuR8kkv2o9nCWK6JtreF&limit=5"
+resp = Net::HTTP.get_response(URI.parse(url))
+buffer = resp.body
+result = JSON.parse(buffer)
+puts result

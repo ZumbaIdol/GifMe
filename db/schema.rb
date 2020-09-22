@@ -10,14 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_15_001044) do
+ActiveRecord::Schema.define(version: 2020_09_22_005855) do
 
   create_table "gifs", force: :cascade do |t|
-    t.string "description"
-    t.integer "user_id"
+    t.string "title"
     t.integer "likes", default: 0
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
     t.index ["user_id"], name: "index_gifs_on_user_id"
   end
 
