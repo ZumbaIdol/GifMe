@@ -16,3 +16,5 @@ resp = Net::HTTP.get_response(URI.parse(url))
 buffer = resp.body
 result = JSON.parse(buffer)
 puts result
+
+
